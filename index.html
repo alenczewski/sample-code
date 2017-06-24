@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Puppy Pad - A way to keep track of everything for your new puppy!</title>
+		<!-- CSS files -->
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/skeleton.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<!-- JS files -->
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="js/puppy-pad.js"></script>
+	</head>
+  <body>
+  	<div class="main-content">
+	  	<h1>Puppy Pad</h1>
+	   <p>Welcome to the puppy pad, your place for keeping track of everything for your new puppy.</p>
+	   <button name="start">Get Started!</button>
+   </div>
+   <!-- Overlays -->
+   <div class="overlay start-form">
+   		<h2>Puppy's Basic Information</h2>
+   		<form name="startForm">
+   			<fieldset name="name">
+   				<legend>Name:</legend>
+   				<input type="text" name="puppyName" placeholder="Puppy's Name" />
+   			</fieldset>
+   			<fieldset name="age">
+   				<legend>Birthdate:</legend>
+   				<select name="birthYear">
+   					<option>Year</option>
+   				</select>
+   				<select name="birthMonth" disabled="disabled">
+   					<option>Month</option>
+   				</select>
+   				<select name="birthDay" disabled="disabled">
+   					<option>Day</option>
+   				</select>
+   				<p class="ageValue"></p>
+   			</fieldset>
+   			<fieldset name="gender">
+   				<legend>Gender:</legend>
+   				<select name="gender">
+   					<option value="u">Unknown</option>
+   					<option value="m">Male</option>
+   					<option value="f">Female</option>
+   				</select>
+   			</fieldset>
+   			<fieldset name="breed">
+   				<legend>Breed:</legend>
+   				<select name="breed">
+   					<option value="unknown">Unknown</option>
+   					<option value="mutt">Mixed/Mutt</option>
+   				</select>
+   			</fieldset>
+   		</form>
+   	</div>
+ </body>
+</html>
