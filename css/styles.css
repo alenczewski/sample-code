@@ -1,0 +1,42 @@
+/* base styles */
+body {
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	background: -webkit-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	background: linear-gradient(to bottom, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	color: #4c3211;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Oswald', sans-serif;
+}
+
+/* specific styles */
+h1 {
+	font-weight: bold;
+	line-height: 2em;
+	text-align: center;
+	text-shadow: -2px -2px 1px #e0c8aa,  
+   2px -2px 1px #e0c8aa,
+   -2px 2px 1px #e0c8aa,
+   2px 2px 1px #e0c8aa;
+}
+.main-content {
+	background: url(../images/paw-prints-2.png) 50% 0 repeat-x;
+	height: 100%;
+	padding: 1.5em 4em;
+}
+button {
+	background: #e0c8aa;
+	border: 1px solid #4c3211;
+	color: #4c3211;
+	font-weight: bold;
+}
+button:disabled {
+	background: #eee;
+}
