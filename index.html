@@ -4,6 +4,7 @@
 		<!-- CSS files -->
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/skeleton.css" />
+		<link rel="stylesheet" href="css/colorbox.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<!-- JS files -->
@@ -12,47 +13,91 @@
 		<script type="text/javascript" src="js/puppy-pad.js"></script>
 	</head>
   <body>
-  	<div class="main-content">
+  	<!-- Default starting content -->
+  	<div class="container main-content">
 	  	<h1>Puppy Pad</h1>
-	   <p>Welcome to the puppy pad, your place for keeping track of everything for your new puppy.</p>
+	   <p>Welcome to the puppy pad, your place for keeping track of everything for <span class="puppyName">your new puppy</span>.</p>
 	   <button name="start">Get Started!</button>
    </div>
+   <!-- Puppy information view -->
+   <div class="container puppy-content">
+   		<div class="column two-thirds main-column">
+   			<h1><span class="puppyName">Puppy</span>'s Information</h1>
+   			<ul class="details">
+   				<li><strong>Birthdate:</strong> <span class="birthdate"></span></li>
+   				<li><strong>Age:</strong> <span class="ageValue"></span></li>
+   				<li><strong>Gender:</strong> <span class="gender"></span></li>
+   				<li><strong>Breed:</strong> <span class="breed"></span></li>
+   				<li><strong>Size:</strong> <span class="size"></span></li>
+ 				</ul>
+ 				<button name="clear">Reset Information</button>
+   		</div>
+   		<div class="column one-third right-column">
+   			<!-- adoptable dog similar characteristics -->
+   			<h3>Adoptable Dogs like <span class="puppyName">Puppy</span></h3>
+   			<div class="adoptable-dogs"></div>
+   		</div>
+   	</div>
    <!-- Overlays -->
    <div class="overlay start-form">
-   		<h2>Puppy's Basic Information</h2>
+   		<h2><span class="puppyName">Puppy</span>'s Basic Info</h2>
    		<form name="startForm">
-   			<fieldset name="name">
-   				<legend>Name:</legend>
-   				<input type="text" name="puppyName" placeholder="Puppy's Name" />
-   			</fieldset>
-   			<fieldset name="age">
-   				<legend>Birthdate:</legend>
-   				<select name="birthYear">
-   					<option>Year</option>
-   				</select>
-   				<select name="birthMonth" disabled="disabled">
-   					<option>Month</option>
-   				</select>
-   				<select name="birthDay" disabled="disabled">
-   					<option>Day</option>
-   				</select>
-   				<p class="ageValue"></p>
-   			</fieldset>
-   			<fieldset name="gender">
-   				<legend>Gender:</legend>
-   				<select name="gender">
-   					<option value="u">Unknown</option>
-   					<option value="m">Male</option>
-   					<option value="f">Female</option>
-   				</select>
-   			</fieldset>
-   			<fieldset name="breed">
-   				<legend>Breed:</legend>
-   				<select name="breed">
-   					<option value="unknown">Unknown</option>
-   					<option value="mutt">Mixed/Mutt</option>
-   				</select>
-   			</fieldset>
+   			<div class="column one-half">
+	   			<fieldset name="name">
+	   				<legend>Name*:</legend>
+	   				<input type="text" name="puppyName" placeholder="Puppy's Name" required pattern="[a-zA-Z0-9 ]+" data-error="Please provide a name without special characters." />
+	   			</fieldset>
+	   			<fieldset name="age">
+	   				<legend>Birthdate*:</legend>
+	   				<select name="birthYear" required data-error="Please choose a year.">
+	   					<option value="">Year</option>
+	   				</select>
+	   				<select name="birthMonth" required data-error="Please choose a month." disabled="disabled">
+	   					<option value="">Month</option>
+	   				</select>
+	   				<select name="birthDay" required data-error="Please choose a day." disabled="disabled">
+	   					<option value="">Day</option>
+	   				</select>
+	   				<p class="ageValue"><strong>Calculated Age:</strong></p>
+	   			</fieldset>
+   			</div>
+   			<div class="column one-half">
+	   			<fieldset name="gender">
+	   				<legend>Gender:</legend>
+	   				<select name="gender">
+	   					<option value="u">Unknown</option>
+	   					<option value="m">Male</option>
+	   					<option value="f">Female</option>
+	   				</select>
+	   			</fieldset>
+	   			<fieldset name="size">
+	   				<legend>Size:</legend>
+	   				<select name="size">
+	   					<option value="u">Unknown</option>
+	   					<option value="s">Small</option>
+	   					<option value="m">Medium</option>
+	   					<option value="l">Large</option>
+	   					<option value="xl">Extra Large</option>
+	   				</select>
+	   			</fieldset>
+	   			<fieldset name="zip">
+	   				<legend>Zip Code:</legend>
+	   				<input type="text" name="zip" placeholder="Zip Code" required pattern="(\d{5}([\-]\d{4})?)" data-error="Please provide a valid zip code." />
+	   			</fieldset>
+	   		</div>
+   			<div class="form-footer">
+	   			<fieldset name="breed">
+	   				<legend>Breed:</legend>
+	   				<select name="breed">
+	   					<option value="unknown">Unknown</option>
+	   					<option value="mutt">Mixed/Mutt</option>
+	   				</select>
+	   			</fieldset>
+	   			<p>* - Required field</p>
+	   			<div class="submit-button">
+   					<input type="submit" value="Create Profile" />
+   				</div>
+   			</div>
    		</form>
    	</div>
  </body>
