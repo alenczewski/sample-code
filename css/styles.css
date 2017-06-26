@@ -1,9 +1,9 @@
 /* base styles */
 body {
-	background: #fefefe;
-	background: -moz-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
-	background: -webkit-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
-	background: linear-gradient(to bottom, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	background: #fefefe url(../images/paw-prints-2.png) 50% 0 repeat-x;
+	background-image: url(../images/paw-prints-2.png), -moz-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	background-image: url(../images/paw-prints-2.png), -webkit-linear-gradient(top, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
+	background-image: url(../images/paw-prints-2.png), linear-gradient(to bottom, #635038 0%, #e0c8aa 10%, #fff 20%, #fefefe 100%);
 	color: #4c3211;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -15,28 +15,79 @@ h5,
 h6 {
 	font-family: 'Oswald', sans-serif;
 }
+h1,
+h2,
+h3 {
+	text-shadow: -2px -2px 1px #e0c8aa,  
+   2px -2px 1px #e0c8aa,
+   -2px 2px 1px #e0c8aa,
+   2px 2px 1px #e0c8aa;
+}
 
 /* specific styles */
 h1 {
 	font-weight: bold;
 	line-height: 2em;
 	text-align: center;
-	text-shadow: -2px -2px 1px #e0c8aa,  
-   2px -2px 1px #e0c8aa,
-   -2px 2px 1px #e0c8aa,
-   2px 2px 1px #e0c8aa;
 }
-.main-content {
-	background: url(../images/paw-prints-2.png) 50% 0 repeat-x;
-	height: 100%;
+.container {
+	height: calc(100% - 3em);
 	padding: 1.5em 4em;
 }
-button {
+.overlay {
+	display: none;
+	overflow: auto;
+}
+#colorbox .overlay {
+	display: block;
+}
+.puppy-content {
+	display: none;
+}
+button,
+input[type=submit] {
 	background: #e0c8aa;
-	border: 1px solid #4c3211;
-	color: #4c3211;
 	font-weight: bold;
 }
 button:disabled {
 	background: #eee;
+}
+.overlay form {
+	margin-bottom: 0;
+}
+.overlay fieldset {
+	border: 1px solid #e0c8aa;
+	border-radius: 3px;
+	padding: 3px 5px;
+}
+.overlay select {
+	max-width: 100%;
+}
+.overlay .error {
+	border-color: #ef3602;
+	color: #ef3602;
+}
+.overlay [name=puppyName] {
+	width: 100%;
+}
+.overlay .ageValue {
+	margin-bottom: 1.5rem;
+}
+.overlay .form-footer {
+	clear: both;
+}
+.overlay .form-footer .submit-button {
+	margin: 1em auto;
+	text-align: center;
+}
+
+.puppy-content h1 {
+	line-height: 1em;
+}
+.puppy-content ul {
+	list-style-image: url(../images/bone-icon.png);
+}
+.puppy-content ul li strong {
+	display: inline-block;
+	width: 80px;
 }
