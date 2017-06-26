@@ -28,6 +28,7 @@ h3 {
 h1 {
 	font-weight: bold;
 	line-height: 2em;
+	min-height: 100px;
 	text-align: center;
 }
 .container {
@@ -90,4 +91,11 @@ button:disabled {
 .puppy-content ul li strong {
 	display: inline-block;
 	width: 80px;
+}
+
+.adoptable-dogs div {
+	margin-bottom: 2em;
+}
+.adoptable-dogs div h6 {
+	margin-bottom: 0;
 }
